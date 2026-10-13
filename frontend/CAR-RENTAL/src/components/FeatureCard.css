@@ -1,0 +1,325 @@
+
+/* ============================================
+   VELOCITYDRIVE - TELEMETRY FEATURE CARDS
+   Dark Theme | No Glow | Responsive Layout
+============================================ */
+
+/* Feature Grid */
+.telemetry-page .telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  margin: 30px 0;
+}
+
+/* ============================================
+   FEATURE CARD
+============================================ */
+
+.telemetry-page .telemetry-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  min-height: 280px;
+  padding: 28px 24px;
+  overflow: hidden;
+
+  background: linear-gradient(
+    145deg,
+    #151d2b 0%,
+    #0d1420 100%
+  );
+
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 18px;
+
+  box-shadow: none;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+/* Remove All Card Glow */
+.telemetry-page .telemetry-card::before,
+.telemetry-page .telemetry-card::after {
+  content: none;
+  display: none;
+}
+
+/* Card Hover */
+.telemetry-page .telemetry-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(148, 163, 184, 0.35);
+
+  box-shadow: none;
+}
+
+/* ============================================
+   FEATURE ICON
+============================================ */
+
+.telemetry-page .feature-icon {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 58px;
+  height: 58px;
+  margin-bottom: 24px;
+
+  color: #bfdbfe;
+  background: #182437;
+
+  border: 1px solid #2b3a50;
+  border-radius: 15px;
+
+  box-shadow: none;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Icon Hover */
+.telemetry-page .telemetry-card:hover .feature-icon {
+  transform: scale(1.05);
+
+  background: #1d2b40;
+  border-color: #3a4b63;
+  box-shadow: none;
+}
+
+/* Icon SVG */
+.telemetry-page .feature-icon svg {
+  display: block;
+  width: 26px;
+  height: 26px;
+  stroke-width: 1.8;
+}
+
+/* ============================================
+   FEATURE CATEGORY
+============================================ */
+
+.telemetry-page .feature-category {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 12px;
+
+  color: #bfdbfe;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  line-height: 1.5;
+
+  text-transform: uppercase;
+}
+
+/* ============================================
+   FEATURE TITLE
+============================================ */
+
+.telemetry-page .telemetry-card h3 {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 12px;
+
+  color: #f1f5f9;
+
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.4px;
+
+  overflow-wrap: anywhere;
+}
+
+/* ============================================
+   FEATURE DESCRIPTION
+============================================ */
+
+.telemetry-page .feature-description {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 24px;
+
+  color: #a7b5c9;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8;
+
+  overflow-wrap: anywhere;
+}
+
+/* ============================================
+   FEATURE FOOTER
+============================================ */
+
+.telemetry-page .feature-footer {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: auto;
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(148, 163, 184, 0.15);
+
+  color: #cbd5e1;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Footer Text and Labels */
+.telemetry-page .feature-footer span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* Footer Icons */
+.telemetry-page .feature-footer svg {
+  width: 15px;
+  height: 15px;
+
+  color: #bfdbfe;
+  filter: none;
+}
+
+/* ============================================
+   STATUS DOT
+============================================ */
+
+.telemetry-page .feature-footer .status-dot {
+  display: inline-block;
+
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #a7f3d0;
+
+  box-shadow: none;
+}
+
+/* ============================================
+   TABLET AND SMALL LAPTOP
+============================================ */
+
+@media (max-width: 1200px) {
+  .telemetry-page .telemetry-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .telemetry-page .telemetry-card {
+    min-height: 260px;
+    padding: 26px 22px;
+  }
+}
+
+/* ============================================
+   MOBILE
+============================================ */
+
+@media (max-width: 640px) {
+  .telemetry-page .telemetry-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .telemetry-page .telemetry-card {
+    min-height: 240px;
+    padding: 24px 20px;
+    border-radius: 15px;
+  }
+
+  .telemetry-page .feature-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 20px;
+    border-radius: 13px;
+  }
+
+  .telemetry-page .feature-icon svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .telemetry-page .feature-category {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .telemetry-page .telemetry-card h3 {
+    font-size: 19px;
+  }
+
+  .telemetry-page .feature-description {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .telemetry-page .feature-footer {
+    padding-top: 15px;
+    font-size: 11px;
+  }
+}
+
+/* ============================================
+   VERY SMALL MOBILE
+============================================ */
+
+@media (max-width: 380px) {
+  .telemetry-page .telemetry-card {
+    padding: 20px 16px;
+  }
+
+  .telemetry-page .feature-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .telemetry-page .telemetry-card,
+  .telemetry-page .feature-icon {
+    transition: none;
+  }
+
+  .telemetry-page .telemetry-card:hover,
+  .telemetry-page .telemetry-card:hover .feature-icon {
+    transform: none;
+  }
+}

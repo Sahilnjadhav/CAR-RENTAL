@@ -1,0 +1,1859 @@
+/* =========================================================
+
+   GLOBAL RESET
+
+========================================================= */
+
+
+
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+
+
+
+html,
+
+body,
+
+#root {
+
+  width: 100%;
+
+  min-height: 100%;
+
+}
+
+
+
+body {
+
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+
+  background: #05070b;
+
+  color: #ffffff;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   APP
+
+========================================================= */
+
+
+
+.app {
+
+  min-height: 100vh;
+
+  background:
+
+    radial-gradient(
+
+      circle at 50% -20%,
+
+      rgba(0, 153, 255, 0.13),
+
+      transparent 38%
+
+    ),
+
+    #05070b;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   NAVBAR
+
+========================================================= */
+
+
+
+.navbar {
+
+  width: 100%;
+
+  height: 82px;
+
+
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+
+
+  padding: 0 42px;
+
+
+
+  position: relative;
+
+  z-index: 1000;
+
+
+
+  background:
+
+    linear-gradient(
+
+      180deg,
+
+      rgba(13, 19, 29, 0.98),
+
+      rgba(7, 11, 18, 0.97)
+
+    );
+
+
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+
+
+  box-shadow:
+
+    0 10px 35px rgba(0, 0, 0, 0.35),
+
+    inset 0 -1px 0 rgba(0, 153, 255, 0.04);
+
+
+
+  backdrop-filter: blur(18px);
+
+}
+
+
+
+
+
+/* =========================================================
+
+   LEFT
+
+========================================================= */
+
+
+
+.navbar-left {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+
+
+  min-width: 320px;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   BRAND
+
+========================================================= */
+
+
+
+.brand {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+
+
+  text-decoration: none;
+
+
+
+  transition: transform 0.25s ease;
+
+}
+
+
+
+.brand:hover {
+
+  transform: translateY(-1px);
+
+}
+
+
+
+
+
+/* =========================================================
+
+   LOGO
+
+========================================================= */
+
+
+
+.logo-box {
+
+  width: 48px;
+
+  height: 48px;
+
+
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+
+
+  color: #20a9ff;
+
+
+
+  border: 1px solid rgba(0, 166, 255, 0.65);
+
+
+
+  border-radius: 13px;
+
+
+
+  background:
+
+    linear-gradient(
+
+      145deg,
+
+      rgba(0, 153, 255, 0.18),
+
+      rgba(0, 92, 255, 0.03)
+
+    );
+
+
+
+  box-shadow:
+
+    0 0 22px rgba(0, 153, 255, 0.18),
+
+    inset 0 0 20px rgba(0, 153, 255, 0.08);
+
+
+
+  position: relative;
+
+
+
+  overflow: hidden;
+
+}
+
+
+
+.logo-box::before {
+
+  content: "";
+
+
+
+  position: absolute;
+
+
+
+  width: 22px;
+
+  height: 22px;
+
+
+
+  top: -8px;
+
+  right: -8px;
+
+
+
+  background: rgba(0, 174, 255, 0.25);
+
+
+
+  filter: blur(12px);
+
+}
+
+
+
+
+
+/* =========================================================
+
+   BRAND TEXT
+
+========================================================= */
+
+
+
+.brand-text {
+
+  display: flex;
+
+  flex-direction: column;
+
+
+
+  line-height: 1;
+
+}
+
+
+
+.brand-name {
+
+  font-size: 20px;
+
+  font-weight: 850;
+
+
+
+  letter-spacing: 0.8px;
+
+
+
+  color: #f1f5fa;
+
+
+
+  white-space: nowrap;
+
+}
+
+
+
+.brand-name span {
+
+  color: #7f8b9d;
+
+}
+
+
+
+.brand-subtitle {
+
+  margin-top: 7px;
+
+
+
+  font-size: 8px;
+
+
+
+  font-weight: 700;
+
+
+
+  letter-spacing: 2px;
+
+
+
+  color: #536176;
+
+
+
+  white-space: nowrap;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   LIVE STATUS
+
+========================================================= */
+
+
+
+.live-status {
+
+  height: 31px;
+
+
+
+  display: flex;
+
+  align-items: center;
+
+
+
+  gap: 8px;
+
+
+
+  padding: 0 13px;
+
+
+
+  border-radius: 30px;
+
+
+
+  background:
+
+    linear-gradient(
+
+      135deg,
+
+      rgba(0, 220, 145, 0.10),
+
+      rgba(0, 220, 145, 0.025)
+
+    );
+
+
+
+  border: 1px solid rgba(0, 220, 145, 0.18);
+
+
+
+  color: #65e7b6;
+
+
+
+  font-size: 11px;
+
+  font-weight: 750;
+
+
+
+  letter-spacing: 0.5px;
+
+
+
+  box-shadow:
+
+    0 0 20px rgba(0, 220, 145, 0.05);
+
+}
+
+
+
+.live-dot {
+
+  width: 7px;
+
+  height: 7px;
+
+
+
+  border-radius: 50%;
+
+
+
+  background: #24e39e;
+
+
+
+  box-shadow:
+
+    0 0 6px #24e39e,
+
+    0 0 13px rgba(36, 227, 158, 0.7);
+
+
+
+  animation: livePulse 1.8s ease-in-out infinite;
+
+}
+
+
+
+@keyframes livePulse {
+
+  0% {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+  }
+
+
+
+  50% {
+
+    opacity: 0.55;
+
+    transform: scale(0.78);
+
+  }
+
+
+
+  100% {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+  }
+
+}
+
+
+
+
+
+/* =========================================================
+
+   DESKTOP NAVIGATION
+
+========================================================= */
+
+
+
+.desktop-nav {
+
+  position: absolute;
+
+
+
+  left: 50%;
+
+
+
+  transform: translateX(-50%);
+
+
+
+  height: 50px;
+
+
+
+  display: flex;
+
+  align-items: center;
+
+
+
+  gap: 3px;
+
+
+
+  padding: 5px;
+
+
+
+  border-radius: 15px;
+
+
+
+  background:
+
+    linear-gradient(
+
+      145deg,
+
+      rgba(22, 29, 40, 0.98),
+
+      rgba(13, 18, 27, 0.98)
+
+    );
+
+
+
+  border: 1px solid rgba(255, 255, 255, 0.075);
+
+
+
+  box-shadow:
+
+    0 10px 30px rgba(0, 0, 0, 0.3),
+
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+
+
+
+  white-space: nowrap;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   NAV ITEMS
+
+========================================================= */
+
+
+
+.nav-item {
+
+  height: 40px;
+
+
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+
+
+  padding: 0 19px;
+
+
+
+  position: relative;
+
+
+
+  border-radius: 10px;
+
+
+
+  color: #8995a7;
+
+
+
+  font-size: 13px;
+
+  font-weight: 650;
+
+
+
+  text-decoration: none;
+
+
+
+  transition:
+
+    color 0.25s ease,
+
+    background 0.25s ease,
+
+    transform 0.25s ease,
+
+    box-shadow 0.25s ease;
+
+}
+
+
+
+.nav-item::after {
+
+  content: "";
+
+
+
+  position: absolute;
+
+
+
+  left: 50%;
+
+  bottom: 4px;
+
+
+
+  width: 0;
+
+  height: 2px;
+
+
+
+  border-radius: 10px;
+
+
+
+  background: #18a8ff;
+
+
+
+  transform: translateX(-50%);
+
+
+
+  box-shadow:
+
+    0 0 10px rgba(24, 168, 255, 0.7);
+
+
+
+  transition: width 0.25s ease;
+
+}
+
+
+
+.nav-item:hover {
+
+  color: #ffffff;
+
+
+
+  background:
+
+    rgba(255, 255, 255, 0.045);
+
+
+
+  transform: translateY(-1px);
+
+}
+
+
+
+.nav-item:hover::after {
+
+  width: 20px;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   ACTIVE NAV ITEM
+
+========================================================= */
+
+
+
+.nav-item.active {
+
+  color: #ffffff;
+
+
+
+  background:
+
+    linear-gradient(
+
+      145deg,
+
+      #293341,
+
+      #1c2531
+
+    );
+
+
+
+  box-shadow:
+
+    0 5px 15px rgba(0, 0, 0, 0.3),
+
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+}
+
+
+
+.nav-item.active::after {
+
+  width: 22px;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   RIGHT SECTION
+
+========================================================= */
+
+
+
+.navbar-right {
+
+  min-width: 320px;
+
+
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+
+
+  gap: 15px;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   CURRENCY
+
+========================================================= */
+
+
+
+.currency-btn {
+
+  height: 38px;
+
+
+
+  display: flex;
+
+  align-items: center;
+
+
+
+  gap: 7px;
+
+
+
+  padding: 0 13px;
+
+
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+
+
+  border-radius: 9px;
+
+
+
+  background:
+
+    rgba(255, 255, 255, 0.035);
+
+
+
+  color: #9ca8b9;
+
+
+
+  font-family: inherit;
+
+
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+
+
+  cursor: pointer;
+
+
+
+  transition:
+
+    color 0.25s ease,
+
+    border-color 0.25s ease,
+
+    background 0.25s ease,
+
+    transform 0.25s ease;
+
+}
+
+
+
+.currency-btn:hover {
+
+  color: #ffffff;
+
+
+
+  border-color: rgba(0, 164, 255, 0.35);
+
+
+
+  background:
+
+    rgba(0, 153, 255, 0.08);
+
+
+
+  transform: translateY(-1px);
+
+}
+
+
+
+
+
+/* =========================================================
+   AUTHENTICATION: LOGIN BUTTON AND USER AVATAR
+========================================================= */
+
+.navbar .nav-button,
+.navbar .avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 40px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: color 0.25s ease, background 0.25s ease,
+    border-color 0.25s ease, transform 0.25s ease;
+}
+
+.navbar .nav-button {
+  min-width: 82px;
+  padding: 0 18px;
+  color: #e5edf7;
+  font-size: 13px;
+  font-weight: 700;
+  background: linear-gradient(145deg, #202b39, #141c27);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+}
+
+.navbar .nav-button:hover {
+  color: #ffffff;
+  background: #253449;
+  border-color: rgba(0, 164, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.navbar .avatar {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid rgba(0, 164, 255, 0.3);
+  border-radius: 50%;
+  color: #eaf5ff;
+  background: linear-gradient(145deg, #26384b, #151f2d);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.navbar .avatar:hover {
+  color: #ffffff;
+  background: #2b4057;
+  border-color: rgba(0, 164, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.navbar .nav-button:focus-visible,
+.navbar .avatar:focus-visible,
+.navbar .menu-btn:focus-visible,
+.mobile-menu .mobile-auth-button:focus-visible {
+  outline: 2px solid #70c7ff;
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+
+   MOBILE BUTTON
+
+========================================================= */
+
+
+
+.menu-btn {
+
+  display: none;
+
+
+
+  width: 43px;
+
+  height: 43px;
+
+
+
+  align-items: center;
+
+  justify-content: center;
+
+
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+
+
+  border-radius: 11px;
+
+
+
+  background:
+
+    linear-gradient(
+
+      145deg,
+
+      #1c2531,
+
+      #111720
+
+    );
+
+
+
+  color: #dbe4ee;
+
+
+
+  cursor: pointer;
+
+
+
+  transition:
+
+    background 0.25s ease,
+
+    border-color 0.25s ease,
+
+    transform 0.25s ease;
+
+}
+
+
+
+.menu-btn:hover {
+
+  background: #222d3b;
+
+
+
+  border-color: rgba(0, 160, 255, 0.3);
+
+
+
+  transform: scale(1.03);
+
+}
+
+
+
+
+
+/* =========================================================
+
+   MOBILE MENU
+
+========================================================= */
+
+
+
+.mobile-menu {
+
+  width: 100%;
+
+
+
+  display: none;
+
+
+
+  flex-direction: column;
+
+
+
+  padding: 15px;
+
+
+
+  position: fixed;
+
+
+
+  top: 82px;
+
+  left: 0;
+
+
+
+  z-index: 999;
+
+
+
+  background:
+
+    linear-gradient(
+
+      180deg,
+
+      #0d131c,
+
+      #080c13
+
+    );
+
+
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+
+
+  box-shadow:
+
+    0 20px 45px rgba(0, 0, 0, 0.5);
+
+
+
+  backdrop-filter: blur(20px);
+
+
+
+  animation: mobileMenuIn 0.25s ease;
+
+}
+
+
+
+@keyframes mobileMenuIn {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(-8px);
+
+  }
+
+
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+
+
+
+
+/* =========================================================
+
+   MOBILE NAV ITEM
+
+========================================================= */
+
+
+
+.mobile-nav-item {
+
+  width: 100%;
+
+  height: 52px;
+
+
+
+  display: flex;
+
+  align-items: center;
+
+
+
+  padding: 0 18px;
+
+
+
+  margin-bottom: 5px;
+
+
+
+  border-radius: 10px;
+
+
+
+  color: #929dad;
+
+
+
+  font-size: 15px;
+
+  font-weight: 650;
+
+
+
+  text-decoration: none;
+
+
+
+  transition:
+
+    background 0.25s ease,
+
+    color 0.25s ease,
+
+    padding 0.25s ease;
+
+}
+
+
+
+.mobile-nav-item:hover {
+
+  color: #ffffff;
+
+
+
+  background:
+
+    rgba(0, 153, 255, 0.07);
+
+
+
+  padding-left: 23px;
+
+}
+
+
+
+.mobile-nav-item.active {
+
+  color: #ffffff;
+
+
+
+  background:
+
+    linear-gradient(
+
+      90deg,
+
+      rgba(0, 153, 255, 0.13),
+
+      rgba(0, 153, 255, 0.035)
+
+    );
+
+
+
+  border-left: 2px solid #0da5ff;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   MOBILE DIVIDER
+
+========================================================= */
+
+
+
+.mobile-divider {
+
+  width: 100%;
+
+  height: 1px;
+
+
+
+  margin: 10px 0 12px;
+
+
+
+  background:
+
+    linear-gradient(
+
+      90deg,
+
+      transparent,
+
+      rgba(255, 255, 255, 0.1),
+
+      transparent
+
+    );
+
+}
+
+
+
+
+
+/* =========================================================
+   MOBILE AUTHENTICATION
+========================================================= */
+
+.mobile-menu .mobile-auth-button {
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid rgba(0, 153, 255, 0.18);
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(0, 153, 255, 0.09), rgba(0, 82, 255, 0.025));
+  color: #dce6f2;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.mobile-menu .mobile-auth-button:hover {
+  background: linear-gradient(135deg, rgba(0, 153, 255, 0.15), rgba(0, 82, 255, 0.05));
+  border-color: rgba(0, 153, 255, 0.35);
+}
+
+.mobile-menu .mobile-avatar {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(0, 164, 255, 0.3);
+  border-radius: 50%;
+  color: #eaf5ff;
+  background: linear-gradient(145deg, #26384b, #151f2d);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.mobile-menu .mobile-auth-button small {
+  display: block;
+  margin-top: 4px;
+  color: #8f9daf;
+  font-size: 11px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.mobile-menu .mobile-login {
+  justify-content: center;
+  text-align: center;
+}
+
+
+/* =========================================================
+
+   PAGE CONTENT
+
+========================================================= */
+
+
+
+.page-content {
+
+  min-height: calc(100vh - 82px);
+
+
+
+  display: flex;
+
+  flex-direction: column;
+
+
+
+  align-items: center;
+
+  justify-content: center;
+
+
+
+  text-align: center;
+
+
+
+  padding: 50px 25px;
+
+
+
+  position: relative;
+
+
+
+  overflow: hidden;
+
+
+
+  background:
+
+    radial-gradient(
+
+      circle at 50% 15%,
+
+      rgba(0, 153, 255, 0.1),
+
+      transparent 35%
+
+    ),
+
+    radial-gradient(
+
+      circle at 10% 90%,
+
+      rgba(90, 0, 255, 0.06),
+
+      transparent 30%
+
+    ),
+
+    #05070b;
+
+}
+
+
+
+.page-content::before {
+
+  content: "";
+
+
+
+  position: absolute;
+
+
+
+  inset: 0;
+
+
+
+  background-image:
+
+    linear-gradient(
+
+      rgba(255, 255, 255, 0.018) 1px,
+
+      transparent 1px
+
+    ),
+
+    linear-gradient(
+
+      90deg,
+
+      rgba(255, 255, 255, 0.018) 1px,
+
+      transparent 1px
+
+    );
+
+
+
+  background-size: 45px 45px;
+
+
+
+  mask-image:
+
+    linear-gradient(
+
+      to bottom,
+
+      rgba(0, 0, 0, 0.7),
+
+      transparent
+
+    );
+
+
+
+  pointer-events: none;
+
+}
+
+
+
+.page-content h1 {
+
+  position: relative;
+
+
+
+  margin-bottom: 15px;
+
+
+
+  font-size: 52px;
+
+
+
+  font-weight: 800;
+
+
+
+  letter-spacing: -1.5px;
+
+
+
+  background:
+
+    linear-gradient(
+
+      90deg,
+
+      #ffffff,
+
+      #9bb7d3
+
+    );
+
+
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+
+
+  -webkit-text-fill-color: transparent;
+
+}
+
+
+
+.page-content p {
+
+  position: relative;
+
+
+
+  color: #7f8b9e;
+
+
+
+  font-size: 18px;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   TABLET
+
+========================================================= */
+
+
+
+@media (max-width: 1200px) {
+
+
+
+  .navbar {
+
+    padding: 0 25px;
+
+  }
+
+
+
+  .navbar-left {
+
+    min-width: auto;
+
+    gap: 15px;
+
+  }
+
+
+
+  .navbar-right {
+
+    min-width: auto;
+
+  }
+
+
+
+  .desktop-nav {
+
+    position: static;
+
+
+
+    transform: none;
+
+
+
+    margin-left: auto;
+
+    margin-right: 20px;
+
+  }
+
+
+
+  .nav-item {
+
+    padding: 0 12px;
+
+
+
+    font-size: 12px;
+
+  }
+
+
+
+  .brand-subtitle {
+
+    display: none;
+
+  }
+
+
+
+}
+
+
+
+
+
+/* =========================================================
+
+   MOBILE
+
+========================================================= */
+
+
+
+@media (max-width: 800px) {
+
+
+
+  .navbar {
+
+    height: 72px;
+
+
+
+    padding: 0 18px;
+
+  }
+
+
+
+  .navbar-left {
+
+    min-width: auto;
+
+  }
+
+
+
+  .live-status {
+
+    display: none;
+
+  }
+
+
+
+  .desktop-nav {
+
+    display: none;
+
+  }
+
+
+
+  .navbar-right {
+
+    min-width: auto;
+
+
+
+    gap: 10px;
+
+  }
+
+
+
+  .currency-btn {
+    display: none;
+  }
+
+
+
+  .navbar .avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+
+
+  .menu-btn {
+
+    display: flex;
+
+  }
+
+
+
+  .mobile-menu {
+
+    display: flex;
+
+
+
+    top: 72px;
+
+  }
+
+
+
+  .page-content {
+
+    min-height: calc(100vh - 72px);
+
+  }
+
+
+
+  .page-content h1 {
+
+    font-size: 40px;
+
+  }
+
+
+
+}
+
+
+
+
+
+/* =========================================================
+
+   SMALL MOBILE
+
+========================================================= */
+
+
+
+@media (max-width: 480px) {
+
+
+
+  .navbar {
+
+    padding: 0 13px;
+
+  }
+
+
+
+  .brand-text {
+
+    display: none;
+
+  }
+
+
+
+  .logo-box {
+
+    width: 42px;
+
+    height: 42px;
+
+  }
+
+
+
+  .navbar-right {
+
+    gap: 8px;
+
+  }
+
+
+
+  .page-content {
+
+    padding: 35px 18px;
+
+  }
+
+
+
+  .page-content h1 {
+
+    font-size: 32px;
+
+  }
+
+
+
+  .page-content p {
+
+    font-size: 15px;
+
+  }
+
+
+
+}
+
+/* Authentication controls on narrow screens */
+@media (max-width: 480px) {
+  .navbar .nav-button {
+    min-width: 68px;
+    height: 38px;
+    padding: 0 11px;
+    font-size: 12px;
+  }
+
+  .navbar .avatar {
+    width: 38px;
+    height: 38px;
+  }
+}

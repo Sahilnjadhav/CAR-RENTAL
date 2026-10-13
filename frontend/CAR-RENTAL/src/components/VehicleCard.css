@@ -1,0 +1,511 @@
+
+/* =========================================
+   VEHICLE CARD - VELOCITYDRIVE
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --vehicle-bg: #101827;
+  --vehicle-card: #151f31;
+  --vehicle-border: rgba(148, 163, 184, 0.16);
+  --vehicle-text: #f1f5f9;
+  --vehicle-muted: #94a3b8;
+  --vehicle-blue: #60a5fa;
+  --vehicle-purple: #a78bfa;
+  --vehicle-green: #34d399;
+}
+
+/* Main card */
+
+.vehicle-card {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  color: var(--vehicle-text);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(30, 41, 59, 0.98),
+      rgba(15, 23, 42, 0.98)
+    );
+  border: 1px solid var(--vehicle-border);
+  border-radius: 20px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(96, 165, 250, 0.5);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.3),
+    0 0 25px rgba(59, 130, 246, 0.08);
+}
+
+/* =========================================
+   VEHICLE IMAGE
+========================================= */
+
+.vehicle-image-wrap {
+  position: relative;
+  height: 225px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #0b1220;
+}
+
+.vehicle-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.65s ease;
+}
+
+.vehicle-card:hover .vehicle-image {
+  transform: scale(1.07);
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 6, 23, 0.48) 0%,
+    transparent 35%,
+    transparent 52%,
+    rgba(2, 6, 23, 0.86) 100%
+  );
+}
+
+/* Image badges */
+
+.instant-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 11px;
+  color: #d1fae5;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  background: rgba(6, 78, 59, 0.78);
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  border-radius: 7px;
+  backdrop-filter: blur(10px);
+}
+
+.rating {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 10px;
+  color: #fbbf24;
+  font-size: 13px;
+  font-weight: 800;
+  background: rgba(15, 23, 42, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.rating small {
+  color: #cbd5e1;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.vehicle-location {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  z-index: 2;
+  max-width: calc(100% - 28px);
+  padding: 7px 10px;
+  overflow: hidden;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: rgba(15, 23, 42, 0.76);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 7px;
+  backdrop-filter: blur(8px);
+}
+
+/* =========================================
+   VEHICLE CONTENT
+========================================= */
+
+.vehicle-content {
+  padding: 21px;
+}
+
+.vehicle-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.vehicle-title-row h3 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+  overflow-wrap: anywhere;
+}
+
+.vehicle-badge {
+  flex-shrink: 0;
+  padding: 6px 9px;
+  color: #bfdbfe;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: rgba(59, 130, 246, 0.13);
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  border-radius: 6px;
+}
+
+.vehicle-description {
+  display: -webkit-box;
+  min-height: 40px;
+  margin: 0 0 19px;
+  overflow: hidden;
+  color: var(--vehicle-muted);
+  font-size: 12px;
+  line-height: 1.7;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* =========================================
+   VEHICLE SPECIFICATIONS
+========================================= */
+
+.vehicle-specs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  padding: 15px 0;
+  border-top: 1px solid var(--vehicle-border);
+  border-bottom: 1px solid var(--vehicle-border);
+}
+
+.spec {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 7px;
+  padding: 0 9px;
+  border-right: 1px solid var(--vehicle-border);
+}
+
+.spec:first-child {
+  padding-left: 0;
+}
+
+.spec:last-child {
+  padding-right: 0;
+  border-right: none;
+}
+
+.spec span {
+  color: #8493aa;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.spec strong {
+  color: #e2e8f0;
+  font-size: 12px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   PRICE AND BOOKING
+========================================= */
+
+.vehicle-booking {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 19px;
+}
+
+.vehicle-price {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+}
+
+.vehicle-price > span {
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.vehicle-price strong {
+  color: #f8fafc;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.7px;
+  overflow-wrap: anywhere;
+}
+
+.vehicle-price small {
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/* Book button */
+
+.book-button {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 0 17px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  border: 1px solid rgba(147, 197, 253, 0.35);
+  border-radius: 10px;
+  box-shadow: 0 5px 16px rgba(59, 130, 246, 0.2);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.book-button span {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.book-button:hover {
+  filter: brightness(1.12);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 22px rgba(59, 130, 246, 0.35);
+}
+
+.book-button:hover span {
+  transform: translateX(4px);
+}
+
+.book-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.book-button:focus-visible {
+  outline: 3px solid rgba(96, 165, 250, 0.65);
+  outline-offset: 4px;
+}
+
+/* =========================================
+   OPTIONAL BADGE COLORS
+   Works with vehicle.badgeColor:
+   blue, green, orange, purple
+========================================= */
+
+.vehicle-badge.blue,
+.vehicle-location.blue {
+  color: #bfdbfe;
+  border-color: rgba(96, 165, 250, 0.35);
+}
+
+.vehicle-badge.green,
+.vehicle-location.green {
+  color: #a7f3d0;
+  border-color: rgba(52, 211, 153, 0.35);
+}
+
+.vehicle-badge.orange,
+.vehicle-location.orange {
+  color: #fed7aa;
+  border-color: rgba(251, 146, 60, 0.35);
+}
+
+.vehicle-badge.purple,
+.vehicle-location.purple {
+  color: #ddd6fe;
+  border-color: rgba(167, 139, 250, 0.35);
+}
+
+.vehicle-badge.blue {
+  background: rgba(59, 130, 246, 0.13);
+}
+
+.vehicle-badge.green {
+  background: rgba(16, 185, 129, 0.13);
+}
+
+.vehicle-badge.orange {
+  background: rgba(249, 115, 22, 0.13);
+}
+
+.vehicle-badge.purple {
+  background: rgba(139, 92, 246, 0.13);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 768px) {
+  .vehicle-image-wrap {
+    height: 215px;
+  }
+
+  .vehicle-content {
+    padding: 18px;
+  }
+
+  .vehicle-title-row h3 {
+    font-size: 17px;
+  }
+
+  .vehicle-price strong {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vehicle-card {
+    border-radius: 16px;
+  }
+
+  .vehicle-image-wrap {
+    height: 200px;
+  }
+
+  .vehicle-content {
+    padding: 16px;
+  }
+
+  .vehicle-title-row {
+    gap: 8px;
+  }
+
+  .vehicle-title-row h3 {
+    font-size: 16px;
+  }
+
+  .vehicle-badge {
+    padding: 5px 7px;
+    font-size: 9px;
+  }
+
+  .vehicle-description {
+    font-size: 12px;
+  }
+
+  .vehicle-specs {
+    gap: 5px;
+    padding: 13px 0;
+  }
+
+  .spec {
+    padding: 0 6px;
+  }
+
+  .spec span {
+    font-size: 9px;
+  }
+
+  .spec strong {
+    font-size: 11px;
+  }
+
+  .vehicle-booking {
+    align-items: flex-end;
+    gap: 8px;
+    padding-top: 16px;
+  }
+
+  .vehicle-price strong {
+    font-size: 20px;
+  }
+
+  .book-button {
+    min-height: 41px;
+    gap: 7px;
+    padding: 0 12px;
+    font-size: 11px;
+  }
+
+  .instant-badge {
+    top: 10px;
+    left: 10px;
+    padding: 7px 8px;
+    font-size: 9px;
+  }
+
+  .rating {
+    top: 10px;
+    right: 10px;
+    padding: 7px 8px;
+  }
+
+  .vehicle-location {
+    bottom: 10px;
+    left: 10px;
+  }
+}
+
+/* Respect reduced-motion accessibility preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .vehicle-card,
+  .vehicle-image,
+  .book-button,
+  .book-button span {
+    transition: none;
+  }
+
+  .vehicle-card:hover,
+  .book-button:hover {
+    transform: none;
+  }
+}
